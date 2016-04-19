@@ -24,5 +24,7 @@ elixir(function(mix) {
                  'plugins/parsley-validation/parsley.js'], 'public/js/main.js')
        .scripts(['plugins/dropzone/dropzone.js',
                  'plugins/wizard/wizard.min.js'], 'public/js/create-leadlist.js')
-       .scripts('sweetalert.min.js', 'public/js/sweetalert.min.js');
+       .scripts('sweetalert.min.js', 'public/js/sweetalert.min.js')
+       .scripts(['plugins/datatable/jquery.dataTables.min.js',
+                 'plugins/datatable/dataTables.bootstrap.js'], 'public/js/datatables.js');
 });

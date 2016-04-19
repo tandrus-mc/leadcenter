@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LeadListGeneralInfoRequest;
+use League\Csv\Reader;
 
 
 class LeadListController extends Controller
@@ -36,7 +37,12 @@ class LeadListController extends Controller
 
     public function show($id){
         $leadList = $this->user->leadLists()->where('id', $id)->first();
-        return view('leadlist.show', compact('leadList'));
+        $list = Reader::createFromPath($leadList->path);
+        $header = $list->fetchOne(0);
+        for($i = 1; $i < 101; $i++){
+            $results[] = $list->fetchOne($i);
+        }
+        return view('leadlist.show', compact('leadList', 'results', 'header'));
     }
 
 
