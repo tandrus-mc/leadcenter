@@ -26,7 +26,4 @@ Route::resource('/lead', 'LeadController');
 Route::post('uploadleadlist/{id}', 'LeadListController@storeLeadList')->name('uploadLeadList.store');
 Route::get('uploadleadlist/{id}', 'LeadListController@uploadLeadList')->name('uploadLeadList.show');
 
-
-Route::get('leadlist/editleadlistindex', 'LeadListController@edit_index');
-
-Route::get('lead/editleadindex', 'LeadController@edit_index');
+Route::get('leadlist/{id}/download', 'LeadListController@downloadLeadList')->name('leadlist.download');

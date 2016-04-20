@@ -13,7 +13,7 @@
     </a>
 </li>
 <li>
-    <a href="{{ action('LeadListController@edit_index') }}">
+    <a href="#">
         <span class="text">Edit</span>
     </a>
 </li>
@@ -32,7 +32,7 @@
     </a>
 </li>
 <li>
-    <a href="{{ action('LeadController@edit_index') }}">
+    <a href="#">
         <span class="text">Edit</span>
     </a>
 </li>

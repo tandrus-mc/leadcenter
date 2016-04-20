@@ -46,16 +46,18 @@ class LeadListController extends Controller
     }
 
 
-    public function update(){
-
+    public function update(Request $request){
+        dd($request->file('leadList'));
     }
 
-    public function edit_index(){
-
-    }
-
-    public function edit(Request $request){
-
+    public function edit($id){
+        $leadList = $this->user->leadLists()->where('id', $id)->first();
+        $list = Reader::createFromPath($leadList->path);
+        $header = $list->fetchOne(0);
+        for($i = 1; $i < 101; $i++){
+            $results[] = $list->fetchOne($i);
+        }
+        return view('leadlist.edit', compact('leadList', 'results', 'header'));
     }
 
     public function destroy(){
@@ -77,5 +79,11 @@ class LeadListController extends Controller
 
         $leadList->save();
         $uploadedLeadList->move($pathPartial, $listName);
+    }
+
+    public function downloadLeadList($id){
+        $leadList = $this->user->leadLists()->where('id', $id)->first();
+        $list = Reader::createFromPath($leadList->path);
+        $list->output($leadList->list_name.'.csv');
     }
 }
