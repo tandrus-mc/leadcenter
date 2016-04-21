@@ -27,3 +27,5 @@ Route::post('uploadleadlist/{id}', 'LeadListController@storeLeadList')->name('up
 Route::get('uploadleadlist/{id}', 'LeadListController@uploadLeadList')->name('uploadLeadList.show');
 
 Route::get('leadlist/{id}/download', 'LeadListController@downloadLeadList')->name('leadlist.download');
+
+Route::get('csv/transfer', 'CsvValidationController@transferToXverify')->name('csv.transfer');

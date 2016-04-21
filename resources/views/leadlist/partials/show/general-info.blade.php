@@ -33,7 +33,7 @@
                     <button type="button" class="btn btn-sm btn-primary pull-right"><i class="fa fa-edit"></i> Add Leads</button>
                 </a>
                 <a href="{{ route('leadlist.download', [$leadList]) }}">
-                    <button type="button" class="btn btn-sm btn-primary pull-right"><i class="fa fa-edit"></i>Download List</button>
+                    <button type="button" class="btn btn-sm btn-primary pull-right"><i class="fa fa-download"></i>Download List</button>
                 </a>
             </div>
         </div>

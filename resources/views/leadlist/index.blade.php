@@ -7,7 +7,7 @@
 
                 <div class="widget">
                     <div class="widget-header">
-                        <h3>Simple Plain Widget</h3>
+                        <h3>List Overview</h3>
                     </div>
                     <div class="widget-content">
                         @foreach($leadLists->chunk(4) as $chunk)
@@ -42,7 +42,6 @@
                         @endforeach
                     </div>
                     <div class="widget-footer">
-                        Footer area
                     </div>
                 </div>
             </div>
