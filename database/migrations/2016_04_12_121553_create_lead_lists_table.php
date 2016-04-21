@@ -14,6 +14,7 @@ class CreateLeadListsTable extends Migration
     {
         Schema::create('lead_lists', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('file_name');
             $table->string( 'list_name' );
             $table->string( 'list_notes');
             $table->string( 'path' );

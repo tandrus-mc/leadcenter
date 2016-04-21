@@ -28,4 +28,4 @@ Route::get('uploadleadlist/{id}', 'LeadListController@uploadLeadList')->name('up
 
 Route::get('leadlist/{id}/download', 'LeadListController@downloadLeadList')->name('leadlist.download');
 
-Route::get('csv/transfer', 'CsvValidationController@transferToXverify')->name('csv.transfer');
+Route::get('csv/transfer/{id}', 'CsvValidationController@transferToXverify')->name('csv.transfer');

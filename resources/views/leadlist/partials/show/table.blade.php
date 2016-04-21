@@ -8,7 +8,7 @@
             @include('leadlist.partials.show.table-head')
             </thead>
             <tbody>
-            @foreach($results as $index => $row)
+            @foreach($listData['results'] as $index => $row)
                 @include('leadlist.partials.show.table-row')
             @endforeach
             </tbody>

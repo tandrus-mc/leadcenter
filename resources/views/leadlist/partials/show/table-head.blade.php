@@ -1,5 +1,5 @@
 <tr>
-    @foreach($header as $column)
+    @foreach($listData['header'] as $column)
         <th>{{ $column }}</th>
     @endforeach
 </tr>
